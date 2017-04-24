@@ -1,6 +1,8 @@
 # AtTinyTestIR
 Display monitor and tester of infrared sequence codes for ATTINY85
 
+This monitor is linked to https://github.com/Ircama/IR2SLink
+
 (C) Ircama, 2017, CC-BY-SA 4.0
 https://creativecommons.org/licenses/by-sa/4.0/
 
