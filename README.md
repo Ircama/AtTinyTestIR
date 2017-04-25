@@ -1,5 +1,5 @@
 # AtTinyTestIR
-Arduino display monitor and tester of infrared sequence codes for ATTINY85
+**Arduino display monitor and tester of infrared sequence codes for ATTINY85**
 
 This monitor is linked to https://github.com/Ircama/IR2SLink
 
