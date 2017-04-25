@@ -14,7 +14,10 @@ Create a new folder called "DKeyboard" under the folder named "libraries" in you
 Create the folder "libraries" in case it does not exist yet. Place all the files under libraries/DKeyboard
 in the target "DKeyboard" subfolder.
 
-This software needs the following library: https://github.com/Ircama/Sony_SLink.git
+This software needs the following libraries:
+
+- https://github.com/Ircama/Sony_SLink.git
+- https://github.com/z3t0/Arduino-IRremote
 
 Check also this note: https://gist.github.com/Ircama/22707e938e9c8f169d9fe187797a2a2c
 
