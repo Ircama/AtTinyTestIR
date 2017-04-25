@@ -1,7 +1,7 @@
 # AtTinyTestIR
 **Arduino display monitor and tester of infrared sequence codes for ATTINY85**
 
-This Arduino sketch receives IR sequences and write it to a standard text editor on the PC it by emulating an [USB keyboard](https://digistump.com/wiki/digispark/tutorials/digikeyboard).
+This Arduino sketch receives IR sequences and write hex codes to a standard text editor on the PC it by emulating an [USB keyboard](https://digistump.com/wiki/digispark/tutorials/digikeyboard). It is not an end-user sketch and its purpose is for debugging and monitoring.
 
 This monitor is linked to https://github.com/Ircama/IR2SLink
 
