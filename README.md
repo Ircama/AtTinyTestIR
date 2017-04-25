@@ -1,5 +1,6 @@
 # AtTinyTestIR
 **Arduino display monitor and tester of infrared sequence codes for ATTINY85**
+This Arduino sketch receives IR sequences and write it to a standard text editor on the PC it by emulating an [USB keyboard](https://digistump.com/wiki/digispark/tutorials/digikeyboard).
 
 This monitor is linked to https://github.com/Ircama/IR2SLink
 
@@ -11,13 +12,12 @@ Create a new folder called "AtTinyTestIR" in your Arduino sketchbook folder.
 Place AtTinyTestIR.ino in the "AtTinyTestIR" folder.
 
 Create a new folder called "DKeyboard" under the folder named "libraries" in your Arduino sketchbook folder.
-Create the folder "libraries" in case it does not exist yet. Place all the files under libraries/DKeyboard
-in the target "DKeyboard" subfolder.
+Create the folder "libraries" in case it does not exist yet. Copy all the files under libraries/DKeyboard
+to the target "DKeyboard" subfolder.
 
-This software needs the following libraries:
+This software needs the [IRemote](https://github.com/z3t0/Arduino-IRremote) library. It also uses a modified version of [DKeyboard](https://github.com/digistump/DigistumpArduino/tree/master/digistump-avr/libraries/DigisparkKeyboard) as previously mentioned; the modification slightly reduces its size so that it can be loaded to the Digispark ATTINY85 device.
 
-- https://github.com/Ircama/Sony_SLink.git
-- https://github.com/z3t0/Arduino-IRremote
+The Digispark ATTINT85 needs to install the latest [Micronucleus](https://github.com/micronucleus/micronucleus) bootloader to enable available rooms for this sketch.
 
 Check also this note: https://gist.github.com/Ircama/22707e938e9c8f169d9fe187797a2a2c
 
