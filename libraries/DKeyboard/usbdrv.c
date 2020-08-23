@@ -445,7 +445,8 @@ usbRequest_t    *rq = (void *)data;
         usbMsgFlags = 0;
         uchar type = rq->bmRequestType & USBRQ_TYPE_MASK;
         if(type != USBRQ_TYPE_STANDARD){    /* standard requests are handled by driver */
-            replyLen = usbFunctionSetup(data);
+            //replyLen = usbFunctionSetup(data); // ircama
+            replyLen = usbDriverSetup(rq); // ircama
         }else{
             replyLen = usbDriverSetup(rq);
         }

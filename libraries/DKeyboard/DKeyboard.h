@@ -21,7 +21,7 @@
 #include <Arduino.h>
 #include <avr/pgmspace.h>
 #include <avr/interrupt.h>
-#include <avr/delay.h>
+#include <util/delay.h>
 #include <string.h>
 
 #include "usbdrv.h"
@@ -37,7 +37,7 @@ typedef uint8_t byte;
 #define BUFFER_SIZE 2 // Minimum of 2: 1 for modifiers + 1 for keystroke
 
 
-static uchar    idleRate;           // in 4 ms units
+//static uchar    idleRate;           // in 4 ms units
 
 
 /* We use a simplifed keyboard report descriptor which does not support the
@@ -49,24 +49,24 @@ static uchar    idleRate;           // in 4 ms units
  * for the second INPUT item.
  */
 const PROGMEM char usbHidReportDescriptor[USB_CFG_HID_REPORT_DESCRIPTOR_LENGTH] = { /* USB report descriptor */
-  0x05, 0x01,                    // USAGE_PAGE (Generic Desktop)
-  0x09, 0x06,                    // USAGE (Keyboard)
-  0xa1, 0x01,                    // COLLECTION (Application)
-  0x05, 0x07,                    //   USAGE_PAGE (Keyboard)
-  0x19, 0xe0,                    //   USAGE_MINIMUM (Keyboard LeftControl)
-  0x29, 0xe7,                    //   USAGE_MAXIMUM (Keyboard Right GUI)
-  0x15, 0x00,                    //   LOGICAL_MINIMUM (0)
-  0x25, 0x01,                    //   LOGICAL_MAXIMUM (1)
-  0x75, 0x01,                    //   REPORT_SIZE (1)
-  0x95, 0x08,                    //   REPORT_COUNT (8)
-  0x81, 0x02,                    //   INPUT (Data,Var,Abs)
-  0x95, 0x01,           //   REPORT_COUNT (simultaneous keystrokes)
-  0x75, 0x08,                    //   REPORT_SIZE (8)
-  0x25, 0x65,                    //   LOGICAL_MAXIMUM (101)
-  0x19, 0x00,                    //   USAGE_MINIMUM (Reserved (no event indicated))
-  0x29, 0x65,                    //   USAGE_MAXIMUM (Keyboard Application)
-  0x81, 0x00,                    //   INPUT (Data,Ary,Abs)
-  0xc0                           // END_COLLECTION
+  (char) 0x05, (char) 0x01,                    // USAGE_PAGE (Generic Desktop)
+  (char) 0x09, (char) 0x06,                    // USAGE (Keyboard)
+  (char) 0xa1, (char) 0x01,                    // COLLECTION (Application)
+  (char) 0x05, (char) 0x07,                    //   USAGE_PAGE (Keyboard)
+  (char) 0x19, (char) 0xe0,                    //   USAGE_MINIMUM (Keyboard LeftControl)
+  (char) 0x29, (char) 0xe7,                    //   USAGE_MAXIMUM (Keyboard Right GUI)
+  (char) 0x15, (char) 0x00,                    //   LOGICAL_MINIMUM (0)
+  (char) 0x25, (char) 0x01,                    //   LOGICAL_MAXIMUM (1)
+  (char) 0x75, (char) 0x01,                    //   REPORT_SIZE (1)
+  (char) 0x95, (char) 0x08,                    //   REPORT_COUNT (8)
+  (char) 0x81, (char) 0x02,                    //   INPUT (Data,Var,Abs)
+  (char) 0x95, (char) 0x01,           //   REPORT_COUNT (simultaneous keystrokes)
+  (char) 0x75, (char) 0x08,                    //   REPORT_SIZE (8)
+  (char) 0x25, (char) 0x65,                    //   LOGICAL_MAXIMUM (101)
+  (char) 0x19, (char) 0x00,                    //   USAGE_MINIMUM (Reserved (no event indicated))
+  (char) 0x29, (char) 0x65,                    //   USAGE_MAXIMUM (Keyboard Application)
+  (char) 0x81, (char) 0x00,                    //   INPUT (Data,Ary,Abs)
+  (char) 0xc0                           // END_COLLECTION
 };
 
 
@@ -233,9 +233,9 @@ extern "C"{
 
   // USB_PUBLIC uchar usbFunctionSetup
   // usbFunctionSetup code removed to reduce the size
-	uchar usbFunctionSetup(uchar data[8]) {
-    return 0;
-  }
+//	uchar usbFunctionSetup(uchar data[8]) {
+//    return 0;
+//  }
 #ifdef __cplusplus
 } // extern "C"
 #endif

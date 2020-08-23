@@ -22,6 +22,8 @@
  * a USB RESET. We first do a binary search for the OSCCAL value and then
  * optimize this value with a neighboorhod search.
  */
+extern unsigned usbMeasureFrameLength(void);
+
 void    calibrateOscillator(void)
 {
 uchar       step = 128;

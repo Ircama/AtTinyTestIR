@@ -71,7 +71,7 @@ the file appropriate for the given clock rate.
 #endif /* __IAR_SYSTEMS_ASM__ */
 
 
-#if USB_INTR_PENDING < 0x40 /* This is an I/O address, use in and out */
+#if USB_INTR_PENDING < 0x40
 #   define  USB_LOAD_PENDING(reg)   in reg, USB_INTR_PENDING
 #   define  USB_STORE_PENDING(reg)  out USB_INTR_PENDING, reg
 #else   /* It's a memory address, use lds and sts */

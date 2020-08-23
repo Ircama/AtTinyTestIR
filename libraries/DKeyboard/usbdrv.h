@@ -659,7 +659,8 @@ int usbDescriptorStringSerialNumber[];
 #   if defined  EIFR
 #       define USB_INTR_PENDING EIFR
 #   else
-#       define USB_INTR_PENDING GIFR
+//#       define USB_INTR_PENDING GIFR
+#       define USB_INTR_PENDING 0x41 // https://digistump.com/board/index.php?topic=2942.0
 #   endif
 #endif
 #ifndef USB_INTR_PENDING_BIT    /* allow user to override our default */
